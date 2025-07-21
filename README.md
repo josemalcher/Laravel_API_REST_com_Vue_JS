@@ -150,7 +150,7 @@ https://codeexperts.com.br/
 
 ## <a name="parte2">2 - 01 - Introdução</a>
 
-
+![01_01.png](img/01_01.png)
 
 [Voltar ao Índice](#indice)
 
@@ -168,7 +168,7 @@ https://codeexperts.com.br/
 
 ## <a name="parte4">4 - 03- API X WebService</a>
 
-
+![img/04_01.png](img/04_01.png)
 
 [Voltar ao Índice](#indice)
 
@@ -186,7 +186,7 @@ https://codeexperts.com.br/
 
 ## <a name="parte6">6 - 05 - Visão do Esquema API</a>
 
-
+![05_01.png](img/05_01.png)
 
 [Voltar ao Índice](#indice)
 
@@ -240,7 +240,7 @@ https://codeexperts.com.br/
 
 ## <a name="parte12">12 - 10 - Explorando Arquivos API</a>
 
-
+[proj01](proj01)
 
 [Voltar ao Índice](#indice)
 
