@@ -285,6 +285,12 @@ https://codeexperts.com.br/
 
 ## <a name="parte16">16 - 14 - Apagando Recursos</a>
 
+```
+ sail artisan make:controller API/ProductController -r --api                                                                                                                                                                                                                                                                                   josemalcher@j0z3M4lch3r 
+
+   INFO  Controller [app/Http/Controllers/API/ProductController.php] created successfully.
+
+```
 
 
 [Voltar ao Índice](#indice)
