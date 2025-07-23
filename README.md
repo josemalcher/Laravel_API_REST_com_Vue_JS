@@ -249,7 +249,16 @@ https://codeexperts.com.br/
 
 ## <a name="parte13">13 - 11 - Iniciando API REST</a>
 
+```
+ sail artisan make:model Product -mf                                                                                                                                                                                                                                                                                                       1 ↵ josemalcher@j0z3M4lch3r 
 
+   INFO  Model [app/Models/Product.php] created successfully.
+
+   INFO  Factory [database/factories/ProductFactory.php] created successfully.
+
+   INFO  Migration [database/migrations/2025_07_22_222748_create_products_table.php] created successfully.  
+
+```
 
 [Voltar ao Índice](#indice)
 
