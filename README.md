@@ -684,6 +684,14 @@ Route::apiResource('products', ProductController::class)
 
 ## <a name="parte38">38 - 33 - Removendo Tokens</a>
 
+```php
+    public function logout()
+    {
+        auth()->user()->tokens()->delete();
+        //auth()->user()->tokens()->where('token', '!=', '')->delete(); // remove todos existentes
+        return response()->json([],204);
+    }
+```
 
 
 [Voltar ao Índice](#indice)

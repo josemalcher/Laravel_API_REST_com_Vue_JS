@@ -20,4 +20,11 @@ class AuthController extends Controller
             ]
         ]);
     }
+
+    public function logout()
+    {
+        auth()->user()->tokens()->delete();
+        //auth()->user()->tokens()->where('token', '!=', '')->delete(); // remove todos existentes
+        return response()->json([],204);
+    }
 }

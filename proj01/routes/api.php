@@ -25,4 +25,5 @@ Route::apiResource('products.categories', ProductCategoryController::class)->onl
     Route::delete('/{product}', 'destroy');
 });
 */
-Route::post('/login', [AuthController::class, 'login']);
+Route::post('/login',  [AuthController::class, 'login']);
+Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth:sanctum');
