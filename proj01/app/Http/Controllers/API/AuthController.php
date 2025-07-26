@@ -15,7 +15,7 @@ class AuthController extends Controller
 
         return response()->json([
             'data' => [
-                'token' => auth()->user()->createToken('default'),
+                'token' => auth()->user()->createToken('default', ['update']),
 
             ]
         ]);

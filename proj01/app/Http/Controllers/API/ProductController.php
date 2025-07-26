@@ -31,6 +31,8 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+        if(!$request->user()->tokenCan('store')) abort(401, 'Unauthorized');
+
         return \App\Models\Product::create($request->all());
     }
 
@@ -56,6 +58,8 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
+        if(!$request->user()->tokenCan('update')) abort(401, 'Unauthorized');
+
         $product->update($request->all());
         return $product;
     }

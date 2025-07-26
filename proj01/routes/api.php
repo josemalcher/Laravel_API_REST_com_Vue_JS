@@ -10,7 +10,7 @@ Route::get('/user', function (Request $request) {
 
 
 Route::apiResource('products', ProductController::class)
-    ->only(['index']);
+    ->only(['index','show']);
 Route::apiResource('products', ProductController::class)
     ->only(['store', 'update', 'destroy'])->middleware('auth:sanctum');
 Route::apiResource('products.categories', ProductCategoryController::class)->only(['index']);

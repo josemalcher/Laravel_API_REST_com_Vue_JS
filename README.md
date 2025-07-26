@@ -701,7 +701,31 @@ Route::apiResource('products', ProductController::class)
 
 ## <a name="parte39">39 - 34 - Permissões nos Tokens</a>
 
+```php
+public function login(Request $request)
+    {
+        $credecial = $request->only(['email', 'password']);
 
+        if(!auth()->attempt($credecial)) abort(401, 'Invalid credentials');
+
+        return response()->json([
+            'data' => [
+                'token' => auth()->user()->createToken('default', ['update']),
+
+            ]
+        ]);
+    }
+```
+
+```php
+public function update(Request $request, Product $product)
+    {
+        if(!$request->user()->tokenCan('update')) abort(401, 'Unauthorized');
+
+        $product->update($request->all());
+        return $product;
+    }
+```
 
 [Voltar ao Índice](#indice)
 
