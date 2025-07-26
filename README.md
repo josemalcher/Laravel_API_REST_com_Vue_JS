@@ -354,7 +354,30 @@ https://codeexperts.com.br/
 
 ## <a name="parte23">23 - 19 - Modificando e Apendando Atributos Model</a>
 
+```php
+class Product extends Model
+{
+    /** @use HasFactory<\Database\Factories\ProductFactory> */
+    use HasFactory;
 
+    protected $fillable = ['name', 'price'];
+
+    // protected $guarded = []; // permite tudo
+
+/*    public  function price():Attribute
+    {
+        return new Attribute(
+            get: fn($price) => $price / 100
+        );
+    }*/
+    protected $appends = ['price_float'];
+    protected function priceFloat(): Attribute
+    {
+        return new Attribute(
+            get: fn ($price, $attributes) => $attributes['price'] / 100,
+        );
+    }
+```
 
 [Voltar ao Índice](#indice)
 
@@ -372,7 +395,21 @@ https://codeexperts.com.br/
 
 ## <a name="parte25">25 - 21 - Serializando Datas e Formatando</a>
 
+```php
+<?php
 
+class Product extends Model
+{
+    protected $casts = [
+        'created_at' => 'date:d-m-Y',
+    ];
+//    protected function serializeDate(DateTimeInterface $date)
+//    {
+//        return $date->format('Y-m-d H:i:s');
+//    }
+}
+
+```
 
 [Voltar ao Índice](#indice)
 
