@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\ProductResource;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -38,7 +39,7 @@ class ProductController extends Controller
         // return $product->load('categories');
         //return $product->with('categories')->first();
         // return $product->without('categories')->find($product->id);
-        return $product;
+        return new ProductResource($product->load('categories')); ;
     }
 
     /**

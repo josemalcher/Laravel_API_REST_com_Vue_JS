@@ -474,7 +474,43 @@ class ProductController extends Controller
 
 ## <a name="parte29">29 - 25 - API Resources</a>
 
+```
+sail artisan make:resource ProductResource                                                                                                                                                                           josemalcher@j0z3M4lch3r 
 
+   INFO  Resource [app/Http/Resources/ProductResource.php] created successfully.
+
+```
+
+```php
+class ProductResource extends JsonResource
+{
+    // public static $wrap = 'product';
+
+    /**
+     * Transform the resource into an array.
+     *
+     * @return array<string, mixed>
+     */
+    public function toArray(Request $request): array
+    {
+        // return parent::toArray($request);
+        return [
+            'name' => $this->name,
+            'price' => $this->price,
+            'price_float' => $this->price_float,
+            'categories' => $this->whenLoaded('categories'),
+
+        ];
+
+    }
+```
+
+```php
+public function show(Product $product)
+    {
+        return new ProductResource($product->load('categories')); ;
+    }
+```
 
 [Voltar ao Índice](#indice)
 
