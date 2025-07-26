@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'test@example.com',
         ]);
 
-        \App\Models\Product::factory(10)
+        \App\Models\Product::factory(1000)
             ->hasCategories(2)
             ->create();
     }

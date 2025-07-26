@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\API\ProductController;
+use App\Http\Controllers\API\{ProductController,ProductCategoryController};
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -10,6 +10,7 @@ Route::get('/user', function (Request $request) {
 
 
 Route::apiResource('products', ProductController::class);
+Route::apiResource('products.categories', ProductCategoryController::class)->only(['index']);
 /*
  * Route::controller(\App\Http\Controllers\API\ProductController::class)
     ->prefix('products')

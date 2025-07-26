@@ -15,6 +15,10 @@ class Product extends Model
 
     protected $fillable = ['name', 'price'];
 
+    protected $with = ['categories'];
+
+    protected $withCount = ['categories'];
+
     // protected $guarded = []; // permite tudo
 
 /*    public  function price():Attribute

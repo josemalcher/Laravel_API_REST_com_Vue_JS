@@ -427,6 +427,17 @@ class Product extends Model
 
 ## <a name="parte27">27 - 23 - REST Dados Relacionados</a>
 
+```php
+class ProductController extends Controller
+{
+    public function show(Product $product)
+    {
+        // Earger Loading | Lazy Loading
+        //return $product->with('categories')->first();
+        return $product->load('categories');
+        //return $product;
+    }
+```
 
 
 [Voltar ao Índice](#indice)
@@ -436,6 +447,24 @@ class Product extends Model
 
 ## <a name="parte28">28 - 24 - Eager Loading Global Model</a>
 
+```php
+class Product extends Model
+{
+    protected $with = ['categories'];
+```
+
+```php
+class ProductController extends Controller
+{
+    public function show(Product $product)
+    {
+        // Earger Loading | Lazy Loading
+        // return $product->load('categories');
+        //return $product->with('categories')->first();
+        return $product->without('categories')->find($product->id);
+    }
+
+```
 
 
 [Voltar ao Índice](#indice)

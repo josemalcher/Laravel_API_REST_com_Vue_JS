@@ -34,6 +34,10 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
+        // Earger Loading | Lazy Loading
+        // return $product->load('categories');
+        //return $product->with('categories')->first();
+        // return $product->without('categories')->find($product->id);
         return $product;
     }
 
