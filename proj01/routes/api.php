@@ -9,7 +9,10 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:sanctum');
 
 
-Route::apiResource('products', ProductController::class);
+Route::apiResource('products', ProductController::class)
+    ->only(['index']);
+Route::apiResource('products', ProductController::class)
+    ->only(['store', 'update', 'destroy'])->middleware('auth:sanctum');
 Route::apiResource('products.categories', ProductCategoryController::class)->only(['index']);
 /*
  * Route::controller(\App\Http\Controllers\API\ProductController::class)

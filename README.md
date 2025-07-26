@@ -668,7 +668,14 @@ sail artisan make:controller API/AuthController                                 
 
 ## <a name="parte37">37 - 32 - Autorização nos Endpoints</a>
 
+```php
 
+
+Route::apiResource('products', ProductController::class)
+    ->only(['index']);
+Route::apiResource('products', ProductController::class)
+    ->only(['store', 'update', 'destroy'])->middleware('auth:sanctum');
+```
 
 [Voltar ao Índice](#indice)
 
