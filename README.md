@@ -519,6 +519,40 @@ public function show(Product $product)
 
 ## <a name="parte30">30 - 26 - API Resources Collections</a>
 
+```
+sail artisan make:resource ProductCollectionResource --collection                                                                                                                                                    josemalcher@j0z3M4lch3r 
+
+   INFO  Resource collection [app/Http/Resources/ProductCollectionResource.php] created successfully.
+
+```
+
+```php
+class ProductCollectionResource extends ResourceCollection
+{
+    /**
+     * Transform the resource collection into an array.
+     *
+     * @return array<int|string, mixed>
+     */
+    public function toArray(Request $request): array
+    {
+        return parent::toArray($request);
+        /*return [
+            'product' => $this->collection,
+            'outro' => 'TESTE',
+
+        ];*/
+    }
+```
+
+```php
+    public function index()
+    {
+        // return new ProductCollectionResource($this->product->all());
+        return new ProductCollectionResource($this->product->paginate(10));
+    }
+
+```
 
 
 [Voltar ao Índice](#indice)
