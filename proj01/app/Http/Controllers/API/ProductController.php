@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\API;
 
+use App\Exceptions\ApiRuleException;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\ProductCollectionResource;
 use App\Http\Resources\ProductResource;
@@ -22,6 +23,7 @@ class ProductController extends Controller
     {
         // return new ProductCollectionResource($this->product->all());
         return new ProductCollectionResource($this->product->paginate(10));
+
     }
 
     /**
@@ -41,7 +43,12 @@ class ProductController extends Controller
         // return $product->load('categories');
         //return $product->with('categories')->first();
         // return $product->without('categories')->find($product->id);
-        return new ProductResource($product->load('categories')); ;
+
+
+        //if(!$product) abort(404, "PRODUTO NO ENCONTRADO");
+
+
+        return new ProductResource($product->load('categories'));;
     }
 
     /**
@@ -56,7 +63,7 @@ class ProductController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Product $product )
+    public function destroy(Product $product)
     {
         $product->delete();
         return $product->name;
