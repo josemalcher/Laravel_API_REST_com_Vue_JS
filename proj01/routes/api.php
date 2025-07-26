@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\API\{ProductController,ProductCategoryController};
+use App\Http\Controllers\API\{AuthController, ProductController, ProductCategoryController};
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -22,3 +22,4 @@ Route::apiResource('products.categories', ProductCategoryController::class)->onl
     Route::delete('/{product}', 'destroy');
 });
 */
+Route::post('/login', [AuthController::class, 'login']);

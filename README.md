@@ -655,7 +655,11 @@ return Application::configure(basePath: dirname(__DIR__))
 
 ## <a name="parte36">36 - 31 - Autenticando Usuários</a>
 
+```
+sail artisan make:controller API/AuthController                                                                                                                                                                  1 ↵ josemalcher@j0z3M4lch3r 
 
+   INFO  Controller [app/Http/Controllers/API/AuthController.php] created successfully.
+```
 
 [Voltar ao Índice](#indice)
 
