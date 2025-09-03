@@ -761,7 +761,34 @@ public function update(Request $request, Product $product)
 
 ## <a name="parte43">43 - 37 - Testes no Laravel</a>
 
+```
+        <env name="DB_CONNECTION" value="sqlite"/>
+        <env name="DB_DATABASE" value=":memory:"/>
+```
 
+```
+ sail artisan test                                                                                                                          josemalcher@j0z3M4lch3r
+
+   PASS  Tests\Unit\ExampleTest
+  ✓ that true is true                                                                                                                                                                                                 0.01s  
+
+   PASS  Tests\Feature\ExampleTest
+  ✓ the application returns a successful response                                                                                                                                                                     0.15s  
+
+  Tests:    2 passed (2 assertions)
+  Duration: 0.24s
+
+```
+
+```
+» sail artisan test --filter=unit                                                                                                            josemalcher@j0z3M4lch3r
+
+   PASS  Tests\Unit\ExampleTest
+  ✓ that true is true
+
+  Tests:    1 passed (1 assertions)
+  Duration: 0.04s
+```
 
 [Voltar ao Índice](#indice)
 
